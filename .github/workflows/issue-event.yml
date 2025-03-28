@@ -1,10 +1,7 @@
 name: Output issue events
 on:
-  [
-    workflow_dispatch,
-    issues:
-      types: [ opened ]
-  ]
+  issues:
+    types: [ opened ]
 jobs:
   output-issue-events:
     runs-on: ubuntu-latest
