@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output issue create event output
-        run: echo "${{ toJSON(github.event.issue) || 'N/A' }}"
+        run: echo "${{ toJSON(github.event.issue.body) }}"
 
