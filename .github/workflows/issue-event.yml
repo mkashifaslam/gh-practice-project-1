@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output issue create event output
-        run: echo "${{ toJSON(github.event.issue.body) }}"
+        run: |
+          echo "issue title ${{ toJSON(github.event.issue.title) }}"
+          echo "issue body ${{ toJSON(github.event.issue.body) }}"
 
