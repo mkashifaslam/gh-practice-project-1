@@ -2,10 +2,12 @@ name: Output issue events
 on:
   workflow_dispatch:
   issues:
+    types:
+      - opened
 jobs:
   output-issue-events:
     runs-on: ubuntu-latest
     steps:
       - name: Output issue create event output
-        run: echo "${{ toJSON(github.event) || 'N/A' }}"
+        run: echo "${{ toJSON(github.event) }}"
 
