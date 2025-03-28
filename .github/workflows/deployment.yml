@@ -1,0 +1,28 @@
+name: Deploy project
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Lint
+        run: |
+          npm run lint
+          echo "Successfully run linting"
+      - name: Test
+        run: |
+          npm run test
+          echo "Successfully run testing"
+      - name: Build
+        run: |
+          npm run build
+          echo "Successfully built project"
+      - name: Deploy
+        run: |
+          echo "Deploying..."
+          echo "Successfully deployed project"
+
